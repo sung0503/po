@@ -75,13 +75,13 @@ Follow the instructions provided in the [`README.md`](https://github.com/Kaiyang
 1. **Environment Setup**:
     ```bash
     # mkdir & clone repo
-    mkdir prompt && cd prompt
+    mkdir "dir_name" && cd "dir_name"
     git clone https://github.com/KaiyangZhou/Dassl.pytorch.git
     git clone https://github.com/KaiyangZhou/CoOp.git
 
     # create conda env
-    conda create -n prompt python=3.10
-    conda activate prompt
+    conda create -n "env_name" python=3.10
+    conda activate "env_name"
     pip install torch==2.0.1 torchvision==0.15.2
 
     # setup dassl
@@ -97,8 +97,8 @@ Follow the instructions provided in the [`README.md`](https://github.com/Kaiyang
     - Create your own dataset folder to avoid storage restrictions in your home directory.
     ```
     cd /hdd/hdd2
-    mkdir "name"
-    cd "name"
+    mkdir "dir_name"
+    cd "dir_name"
     wget 
     tar -zxvf 10datasets.tar.gz
     ```
