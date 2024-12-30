@@ -94,7 +94,7 @@ Follow the instructions provided in the [`README.md`](https://github.com/Kaiyang
 2. **Datasets**:
     - Following the instructions in the [`DATASETS.md`](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md).
     - For 10 datasets (except ImageNet), you download files form [here]()
-    - make your own dataset folders due to limit of home dir.
+    - Create your own dataset folder to avoid storage restrictions in your home directory.
     ```
     cd /hdd/hdd2
     mkdir "name"
@@ -104,13 +104,29 @@ Follow the instructions provided in the [`README.md`](https://github.com/Kaiyang
     ```
 
 3. **Training**:
-   - Make sure to specify the correct dataset paths in `CoOp/scripts/*/*.sh`.
-
+    - Make sure to specify the correct dataset paths in `CoOp/scripts/*/*.sh`.
+    - For instance, `dtd` refers to the dataset, `vit_b16` specifies the vision transformer backbone, and `end` indicates the training strategy. The `CUDA_VISIBLE_DEVICES` parameter assigns a specific GPU for training.
+    Modify it based on your hardware configuration.
     ```bash
     # run coop
     cd ../CoOp/
     CUDA_VISIBLE_DEVICES=0 bash scripts/coop/main.sh dtd vit_b16 end 16 16 False
     ```
+    - durations `b2n setting`
+
+        | Rank | Dataset         | Duration       |
+        |------|-----------------|----------------|
+        | 1    | eurosat         | 3m23s          |
+        | 2    | dtd             | 5m43s          |
+        | 3    | oxford_pets     | 5m02s          |
+        | 4    | ucf101          | 8m36s          |
+        | 5    | caltech101      | 8m38s          |
+        | 6    | oxford_flowers  | 8m57s          |
+        | 7    | food101         | 9m31s          |
+        | 8    | fgvc_aircraft   | 13m25s         |
+        | 9    | stanford_cars   | 18m48s         |
+        | 10   | sun397          | 1h10m32s       |
+
 
 
 ## 6. Further Readings
